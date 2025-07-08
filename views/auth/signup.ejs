@@ -1,0 +1,39 @@
+<%- include("../includes/head.ejs") %>
+<main>
+  <form class="product-form" action="/signup-submit" method="POST">
+    
+    <div class="form-control">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" />
+    </div>
+    
+    
+    <div class="form-control">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" />
+    </div>
+    <div class="form-control">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        
+      />
+
+      <div class="form-control">
+      <label for="password">Confirm Password</label>
+      <input
+        type="password"
+        name="ConfirmPassword"
+        id="ConfirmPassword"
+        
+      />
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+      </div>
+    
+    <button class="btn" type="submit">Sign Up</button>
+  </form>
+</main>
+
+<%- include("../includes/end.ejs") %>
