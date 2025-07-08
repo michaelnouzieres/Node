@@ -1,0 +1,19 @@
+<%- include("../includes/head.ejs") %>
+<main class="centered">
+  <h1><%=docTitle %></h1>
+  <hr />
+  <img src="<%= imgUrl %>" alt="<%=docTitle %>" />
+
+  <p><%= description %></p>
+
+  <h2>$<%= price %></h2>
+
+  <% if(isAuth){ %>
+
+  <form action="/cart" method="post">
+    <button class="btn">Add to Cart</button>
+    <input type="hidden" name="productId" value="<%= product._id %>" />
+  </form>
+  <% } %>
+</main>
+<%- include("../includes/end.ejs") %>
